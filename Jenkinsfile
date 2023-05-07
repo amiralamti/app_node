@@ -12,7 +12,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'auth_dockerhub', usernameVariable: 'DOCKERHUB_USERNAME',     passwordVariable: 'DOCKERHUB_PASSWORD')]) {
                     sh "docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD"
-                    sh "docker push amiralamti/node:amira"
+                    sh "docker push node:amira"
                 }
             }
   }
