@@ -8,14 +8,15 @@ pipeline {
         }
       }
     }
-    stage('Push Docker Image to Docker Hub') {
+     stage('Push to DockerHub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'auth_dockerhub', usernameVariable: 'DOCKERHUB_USERNAME',     passwordVariable: 'DOCKERHUB_PASSWORD')]) {
-                    sh "docker login -u amiralamti -p amira1998"
-                    sh "docker push amiralamti/node:amira"
+                script {
+                    docker.withRegistry('https://hub.docker.com/', 'auth_dockerhub') {
+                        dockerImage.push()
+                    }
                 }
             }
-  }
+}
 }
 }
 
