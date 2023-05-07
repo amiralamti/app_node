@@ -4,7 +4,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-          def dockerImage = docker.build("node:latest", "-f Dockerfile .")
+          def dockerImage = docker.build("node:amira", "-f Dockerfile .")
         }
       }
     }
