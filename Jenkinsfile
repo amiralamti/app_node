@@ -3,7 +3,7 @@ pipeline {
     docker {
       image 'node:14'
       args '-p 3005:3005'
-      label 'my-docker-agent' // utilisez le label que vous avez configuré pour le nœud Docker
+     
     }
   }
   stages {
