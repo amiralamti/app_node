@@ -17,8 +17,3 @@ EXPOSE 3005
 # Démarre l'application
 CMD [ "npm", "start" ]
 
-ENV JENKINS_HOME /var/jenkins_home
-ENV JAVA_OPTS "-Djenkins.install.runSetupWizard=false"
-ENV JENKINS_OPTS "--prefix=/jenkins"
-
-
