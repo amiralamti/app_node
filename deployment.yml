@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: nodejs-deployment
   labels:
-    app: nodeapp
+    app: node
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: node
   template:
     metadata:
       labels:
-        app: nodeapp
+        app: node
     spec:
       containers:
-      - name: nodeapp
+      - name: node
         image: amiralamti/node:amira
         imagePullPolicy: Always
         ports:
@@ -27,7 +27,7 @@ kind: Service
 metadata:
   name: nodejs-service
   labels:
-    app: nodeapp
+    app: node
 spec:
   type: NodePort
   ports:
@@ -36,4 +36,4 @@ spec:
     targetPort: 3005
     nodePort: 30000
   selector:
-    app: nodeapp
+    app: node
